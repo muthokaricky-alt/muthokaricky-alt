@@ -1,22 +1,20 @@
 ## Hi there , I'm Rick Muthoka 👋
 
-I'm a Computer Science student at Strathmore University who enjoys building software and learning new things. Am passionate about many dormains from tech to movies to series, music, animanga and sports, among other stuff.
+I'm a Computer Scientist from Strathmore University who enjoys building software and learning new things. Am passionate about many dormains from tech to movies to series, music, animanga and sports, among other stuff.
 
 ## Tech Stack
 
 - Java
-- JavaScript
-- TypeScript
-- React
+- JavaScript /TypeScript / React
 - HTML & CSS
-- SQL
 - Python
+- SQL
 - C++ (Basics)
 - C# (Basics)
 
 ## Currently Learning
 
-- Software Engineering
+- Software Engineering n game dev
 - Operating Systems
 - Web Development
 - Networking
