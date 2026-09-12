@@ -1,16 +1,25 @@
-## Hi there 👋
+## Hi there , I'm Rick Muthoka 👋
 
-<!--
-**muthokaricky-alt/muthokaricky-alt** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+I'm a Computer Science student at Strathmore University who enjoys building software and learning new things. Am passionate about many dormains from tech to movies to series, music, animanga and sports, among other stuff.
 
-Here are some ideas to get you started:
+## Tech Stack
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+- Java
+- JavaScript
+- TypeScript
+- React
+- HTML & CSS
+- SQL
+- Python
+- C++ (Basics)
+- C# (Basics)
+
+## Currently Learning
+
+- Software Engineering
+- Operating Systems
+- Web Development
+- Networking
+- Data Structures & Algorithms
+- Learning AI/ML
+- And breaking and making stuff
