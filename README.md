@@ -1,7 +1,7 @@
 <div align="center">
 
 #  Hi there , I'm Rick Muthoka 👋
-**Software Engineer *
+
  I'm a Computer Scientist from Strathmore University who enjoys building software and learning new things. Am passionate about many dormains from tech to movies to series, music, animanga and sports, among other stuff.
 
 <br/>
