@@ -2,7 +2,7 @@
 
 #  Hi there , I'm Rick Muthoka 👋
 
- I'm a Computer Scientist from Strathmore University who enjoys building software and learning new things. Am passionate about many dormains from tech to movies to series, music, animanga and sports, among other stuff.
+ I'm a Computer Scientist from Strathmore University who enjoys building software and learning new things. Am passionate about many dormains from tech to movies to series, music, animanga, sports, among other stuff.
 
 <br/>
 
