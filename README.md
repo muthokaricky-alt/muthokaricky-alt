@@ -33,36 +33,17 @@
   <img width="12" />
   <img src="https://skillicons.dev/icons?i=css" height="60" alt="css3 logo" />
   <img width="12" />
-  <img src="https://skillicons.dev/icons?i=dart" height="60" alt="dart logo" />
-  <img width="12" />
   <img src="https://skillicons.dev/icons?i=javascript" height="60" alt="javascript logo" />
-  <img width="12" />
-  <img src="https://skillicons.dev/icons?i=kotlin" height="60" alt="kotlin logo" />
   <img width="12" />
   <img src="https://skillicons.dev/icons?i=php" height="60" alt="php logo" />
   <img width="12" />
   <img src="https://skillicons.dev/icons?i=python" height="60" alt="python logo" />
   <img width="12" />
-  <img src="https://skillicons.dev/icons?i=ruby" height="60" alt="ruby logo" />
-  <img width="12" />
-  <img src="https://skillicons.dev/icons?i=rust" height="60" alt="rust logo" />
-  <img width="12" />
-  <img src="https://skillicons.dev/icons?i=solidity" height="60" alt="solidity logo" />
-  <img width="12" />
-  <img src="https://skillicons.dev/icons?i=androidstudio" height="60" alt="androidstudio logo" />
-  <img width="12" />
   <img src="https://skillicons.dev/icons?i=typescript" height="60" alt="typescript logo" />
-  <img width="12" />
-  <img src="https://skillicons.dev/icons?i=nextjs" height="60" alt="Next.js">
-  <img width="12" />
-  <img src="https://skillicons.dev/icons?i=threejs" height="60" alt="Three.js">
   <img width="12" />
   <img src="https://skillicons.dev/icons?i=react" height="60" alt="React Native">
   <img width="12" />
-  <img src="https://skillicons.dev/icons?i=nestjs" height="60" alt="NestJS">
-  <img width="12" />
-  <img src="https://skillicons.dev/icons?i=redis" height="60" alt="Redis">
-
+ 
   <!-- Frameworks / Libraries -->
 
   <img width="12" />
@@ -76,21 +57,7 @@
   <img width="12" />
   <img src="https://skillicons.dev/icons?i=fastapi" height="60" alt="fastapi logo" />
   <img width="12" />
-  <img src="https://skillicons.dev/icons?i=go" height="60" alt="go">
-  <img width="12" />
-  <img src="https://skillicons.dev/icons?i=flutter" height="60" alt="flutter logo" />
-  <img width="12" />
-  <img src="https://skillicons.dev/icons?i=laravel" height="60" alt="laravel logo" />
-  <img width="12" />
   <img src="https://skillicons.dev/icons?i=nodejs" height="60" alt="nodejs logo" />
-  <img width="12" />
-  <img src="https://skillicons.dev/icons?i=nuxtjs" height="60" alt="nuxtjs logo" />
-  <img width="12" />
-  <img src="https://skillicons.dev/icons?i=vite" height="60" alt="vite logo" />
-  <img width="12" />
-  <img src="https://skillicons.dev/icons?i=vue" height="60" alt="vue.js logo" />
-  <img width="12" />
-  <img src="https://skillicons.dev/icons?i=materialui" height="60" alt="MaterialUI">
   <img width="12" />
   <img src="https://skillicons.dev/icons?i=tailwind" height="60" alt="Tailwind">
   <img width="12" />
@@ -102,14 +69,9 @@
   <img width="12" />
   <img src="https://skillicons.dev/icons?i=aws" height="60" alt="aws logo" />
   <img width="12" />
-  <img src="https://skillicons.dev/icons?i=dotnet" height="60" alt="dotnet logo" />
-  <img width="12" />
   <img src="https://skillicons.dev/icons?i=java" height="60" alt="java">
   <img width="12" />
-  <img src="https://skillicons.dev/icons?i=svelte" height="60" alt="svelte">
-  <img width="12" />
-  <img src="https://skillicons.dev/icons?i=sass" height="60" alt="sass logo" />
-
+ 
   <!-- Databases -->
 
   <img width="12" />
