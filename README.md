@@ -13,17 +13,17 @@
   <!-- Languages -->
   <img src="https://skillicons.dev/icons?i=cpp" height="60" alt="c++ logo" />
   <img width="12" />
+  <img src="https://skillicons.dev/icons?i=cs" height="60" alt="cs logo" />
+  <img width="12" />
   <img src="https://skillicons.dev/icons?i=java" height="60" alt="java">
   <img width="12" />
-  <img src="https://skillicons.dev/icons?i=cs" height="60" alt="cs logo" />
+  <img src="https://skillicons.dev/icons?i=python" height="60" alt="python logo" />
   <img width="12" />
   <img src="https://skillicons.dev/icons?i=css" height="60" alt="css3 logo" />
   <img width="12" />
   <img src="https://skillicons.dev/icons?i=javascript" height="60" alt="javascript logo" />
   <img width="12" />
   <img src="https://skillicons.dev/icons?i=php" height="60" alt="php logo" />
-  <img width="12" />
-  <img src="https://skillicons.dev/icons?i=python" height="60" alt="python logo" />
   <img width="12" />
   <img src="https://skillicons.dev/icons?i=typescript" height="60" alt="typescript logo" />
   <img width="12" />
