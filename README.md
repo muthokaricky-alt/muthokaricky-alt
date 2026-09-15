@@ -13,6 +13,8 @@
   <!-- Languages -->
   <img src="https://skillicons.dev/icons?i=cpp" height="60" alt="c++ logo" />
   <img width="12" />
+  <img src="https://skillicons.dev/icons?i=java" height="60" alt="java">
+  <img width="12" />
   <img src="https://skillicons.dev/icons?i=cs" height="60" alt="cs logo" />
   <img width="12" />
   <img src="https://skillicons.dev/icons?i=css" height="60" alt="css3 logo" />
@@ -52,8 +54,6 @@
 
   <img width="12" />
   <img src="https://skillicons.dev/icons?i=aws" height="60" alt="aws logo" />
-  <img width="12" />
-  <img src="https://skillicons.dev/icons?i=java" height="60" alt="java">
   <img width="12" />
  
   <!-- Databases -->
