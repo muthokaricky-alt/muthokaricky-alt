@@ -7,7 +7,7 @@
 <br/>
 
 
-  ## 🛠️ Tech Stack
+  ## -- Tech Stack--
 
 <div align="center">
   <!-- Languages -->
@@ -76,8 +76,7 @@
   <img width="12" />
   <img src="https://skillicons.dev/icons?i=wordpress" height="60" alt="wordpress logo" />
   <img width="12" />
-  <img src="https://skillicons.dev/icons?i=webflow" height="60" alt="webflow logo" />
-  <img width="12" />
+
 </div>
 
 
