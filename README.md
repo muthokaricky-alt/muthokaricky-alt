@@ -8,6 +8,6 @@ I'm a Computer Scientist from Strathmore University who enjoys building software
 
 ## Tech Stack
 
-<img src="https://skillicons.dev/icons?i=cpp,cs,java,js,html,css,php,python,react,typescript,nodejs,express,angular,django,sqlite,aws,mysql,supabase,git,github,vscode,figma,vercel&perline=12" />
+<img src="https://skillicons.dev/icons?i=cpp,cs,java,js,html,css,php,python,react,typescript,nodejs,express,angular,django,sqlite,aws,mysql,supabase,git,github,vscode,postman,figma,vercel&perline=12" width="850" />
 
 </div>
