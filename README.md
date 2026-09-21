@@ -27,6 +27,7 @@
   <img width="12" />
   <img src="https://skillicons.dev/icons?i=typescript" height="60" alt="typescript logo" />
   <img width="12" />
+  <img src="https://skillicons.dev/icons?i=cpp,java,js,html,css,php,python,react,mysql,git,github,vscode,figma"
   <img src="https://skillicons.dev/icons?i=react" height="60" alt="React Native">
   <img width="12" />
  
