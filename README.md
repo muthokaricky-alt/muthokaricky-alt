@@ -7,15 +7,23 @@ I'm a Computer Scientist from Strathmore University who enjoys building software
 <br/>
 
 
-<h3 align="left">Connect with me:</h3>
-<p align="left">
+
+<h2 align="center">Connect with me</h2>
+
+<p align="center">
   <a href="https://instagram.com/rickschamploo" target="_blank">
-    <img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/instagram.svg" alt="rickschamploo" height="30" width="40" />
+    <img src="https://cdn.simpleicons.org/instagram/E4405F" alt="Instagram" height="65" width="65" />
   </a>
+  &nbsp;&nbsp;&nbsp;&nbsp;
   <a href="https://www.tiktok.com/@rickschamploo" target="_blank">
-    <img align="center" src="https://cdn.simpleicons.org/tiktok/white" alt="rickschamploo" height="30" width="40" />
+    <img src="https://cdn.simpleicons.org/tiktok/white" alt="TikTok" height="65" width="65" />
+  </a>
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <a href="mailto:muthokaricky@gmail.com">
+    <img src="https://cdn.simpleicons.org/gmail/EA4335" alt="Gmail" height="65" width="65" />
   </a>
 </p>
+
 
 
 ## Tech Stack
