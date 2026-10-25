@@ -7,19 +7,18 @@ I'm a Computer Scientist from Strathmore University who enjoys building software
 <br/>
 
 
-
 <h2 align="center">Connect with me</h2>
 
 <p align="center">
-  <a href="https://instagram.com/rickschamploo" target="_blank">
+  <a href="https://instagram.com/rickschamploo" target="_blank" style="text-decoration: none;">
     <img src="https://cdn.simpleicons.org/instagram/E4405F" alt="Instagram" height="65" width="65" />
   </a>
   &nbsp;&nbsp;&nbsp;&nbsp;
-  <a href="https://www.tiktok.com/@rickschamploo" target="_blank">
+  <a href="https://www.tiktok.com/@rickschamploo" target="_blank" style="text-decoration: none;">
     <img src="https://cdn.simpleicons.org/tiktok/white" alt="TikTok" height="65" width="65" />
   </a>
   &nbsp;&nbsp;&nbsp;&nbsp;
-  <a href="mailto:muthokaricky@gmail.com">
+  <a href="mailto:muthokaricky@gmail.com" style="text-decoration: none;">
     <img src="https://cdn.simpleicons.org/gmail/EA4335" alt="Gmail" height="65" width="65" />
   </a>
 </p>
