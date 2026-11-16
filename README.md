@@ -30,9 +30,7 @@
   <a href="https://github.com/muthokaricky-alt/TicTacToe"><img src="assets/t-tictactoe.svg" width="49%" alt="Tic-Tac-Toe: real-time 1v1 multiplayer with server-authoritative game state. ASP.NET Core, SignalR. Opens the code." /></a>
 </p>
 
-<br/>
-
-**TypeScript · React · Next.js · React Native · Node.js · PostgreSQL · MySQL · Prisma · Python · C# · Docker**
+<img src="assets/stack.svg" width="100%" alt="Built with: TypeScript, JavaScript, React, Next.js, Expo, Node.js, Express, PostgreSQL, MySQL, Prisma, Python, C# and .NET, Java, C++, Docker, Git, GitHub Actions, Cloudflare, Figma, Vite." />
 
 <sub>Off the keyboard: anime and manga (that's where AniTrack came from), football, films and music.</sub>
 
