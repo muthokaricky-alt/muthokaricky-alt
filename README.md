@@ -3,12 +3,12 @@
 <img src="assets/hero.svg" width="100%" alt="Rick Muthoka. Full-stack developer. I build the software I actually want to use. Computer Science at Strathmore University, Mombasa, Kenya. Open to internships and junior roles." />
 
 <p>
-  <a href="https://www.linkedin.com/in/rick-kyalo-46116a38b">LinkedIn</a>
-  &nbsp;·&nbsp;
-  <a href="mailto:muthokaricky@gmail.com">Email</a>
-  &nbsp;·&nbsp;
-  <a href="https://github.com/muthokaricky-alt?tab=repositories">All repositories</a>
-  <!-- Once MyPortfolio is deployed:  &nbsp;·&nbsp; <a href="https://YOUR-PORTFOLIO-URL">Portfolio</a> -->
+  <a href="mailto:muthokaricky@gmail.com"><img src="assets/btn-email.svg" height="52" alt="Email me" /></a>
+  &nbsp;
+  <a href="https://www.linkedin.com/in/rick-kyalo-46116a38b"><img src="assets/btn-linkedin.svg" height="52" alt="LinkedIn" /></a>
+  &nbsp;
+  <a href="https://github.com/muthokaricky-alt?tab=repositories"><img src="assets/btn-repos.svg" height="52" alt="All repositories" /></a>
+  <!-- Once MyPortfolio is deployed, add a button for it here. -->
 </p>
 
 <br/>
@@ -50,11 +50,11 @@
   <a href="https://github.com/muthokaricky-alt/MyBlock"><img src="assets/t-myblock.svg" width="49%" alt="MyBlock: a Manifest V3 ad blocker that reads real EasyList filters, with an element picker. Opens the code." /></a>
 </p>
 
-<sub>Also: a <a href="https://github.com/muthokaricky-alt/TicTacToe">real-time Tic-Tac-Toe</a> in ASP.NET Core and SignalR, and more on my <a href="https://github.com/muthokaricky-alt?tab=repositories">repositories page</a>.</sub>
+<sub>Also: a <a href="https://github.com/muthokaricky-alt/TicTacToe">real-time Tic-Tac-Toe</a> in ASP.NET Core and SignalR.</sub>
 
 <br/><br/>
 
-<img src="assets/stack.svg" width="100%" alt="Built with: TypeScript, JavaScript, React, Next.js, Expo, Node.js, Express, PostgreSQL, MySQL, Prisma, Python, C# and .NET, Java, C++, Docker, Git, GitHub Actions, Cloudflare, Figma, Vite." />
+<img src="assets/stack.svg" width="100%" alt="Built with. Languages: TypeScript, JavaScript, Python, C#, Java, C++. Front end: React, Next.js, Expo, Vite, Figma. Back end and data: Node.js, Express, PostgreSQL, MySQL, Prisma. Shipping: Docker, Git, GitHub Actions, Cloudflare." />
 
 <br/><br/>
 
