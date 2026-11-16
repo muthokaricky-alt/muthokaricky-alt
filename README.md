@@ -25,14 +25,16 @@ Most of it ships with a live demo.
 
 ### More projects
 
-| Project | What it is | Built with | |
-| --- | --- | --- | --- |
-| [**Nexus LMS**](https://github.com/muthokaricky-alt/NexusLS) | Learning platform for students, instructors and admins, with server-graded quizzes and PDF certificates | Next.js · TypeScript · Prisma · Docker | |
-| [**MyBlock**](https://github.com/muthokaricky-alt/MyBlock) | Manifest V3 ad blocker that parses real EasyList syntax, with an element picker | JavaScript · declarativeNetRequest · CI | |
-| [**QR Studio**](https://github.com/muthokaricky-alt/QR-Studio) | QR generator with a hand-written encoder that runs entirely in the browser | Vanilla JS · Canvas · SVG | [Live ↗](https://muthokaricky-alt.github.io/QR-Studio/) |
-| [**Schedulix**](https://github.com/muthokaricky-alt/Schedulix-) | CPU scheduling simulator comparing FCFS, SJF, SRTF and Round Robin | Python · Streamlit · pytest | [Live ↗](https://muthokaricky-alt-schedulix--app-qcf6ny.streamlit.app/) |
-| [**Budget Tracker**](https://github.com/muthokaricky-alt/budget-tracker) | Shared budget app with charts, CSV import and export, and unit tests | React 19 · TypeScript · Zustand · Vitest | |
-| [**Tic-Tac-Toe**](https://github.com/muthokaricky-alt/TicTacToe) | Real-time multiplayer with server-authoritative game state | ASP.NET Core · SignalR | |
+<p>
+  <a href="https://github.com/muthokaricky-alt/NexusLS"><img src="assets/p-nexus.svg" width="49%" alt="Nexus LMS: learning platform with courses, server-graded quizzes and PDF certificates. Next.js, TypeScript, Prisma." /></a>
+  <a href="https://github.com/muthokaricky-alt/MyBlock"><img src="assets/p-myblock.svg" width="49%" alt="MyBlock: Manifest V3 ad blocker that reads real EasyList filters, with an element picker. JavaScript, declarativeNetRequest." /></a>
+  <a href="https://muthokaricky-alt.github.io/QR-Studio/"><img src="assets/p-qr.svg" width="49%" alt="QR Studio: QR generator with its own encoder that runs entirely in the browser. Vanilla JS, Canvas, SVG. Click to open the live demo." /></a>
+  <a href="https://muthokaricky-alt-schedulix--app-qcf6ny.streamlit.app/"><img src="assets/p-schedulix.svg" width="49%" alt="Schedulix: CPU scheduling simulator comparing FCFS, SJF, SRTF and Round Robin. Python, Streamlit, pytest. Click to open the live demo." /></a>
+  <a href="https://github.com/muthokaricky-alt/budget-tracker"><img src="assets/p-budget.svg" width="49%" alt="Budget Tracker: a shared budget for two, with charts, CSV backups and undo. React 19, TypeScript, Zustand." /></a>
+  <a href="https://github.com/muthokaricky-alt/TicTacToe"><img src="assets/p-tictactoe.svg" width="49%" alt="Tic-Tac-Toe: real-time 1v1 multiplayer with server-authoritative game state. ASP.NET Core, SignalR." /></a>
+</p>
+
+<sub>Cards marked Live open the demo; the rest open the code. Source for everything is on my <a href="https://github.com/muthokaricky-alt?tab=repositories">repositories page</a>, including <a href="https://github.com/muthokaricky-alt/QR-Studio">QR Studio</a> and <a href="https://github.com/muthokaricky-alt/Schedulix-">Schedulix</a>.</sub>
 
 ### What I build with
 
