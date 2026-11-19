@@ -15,7 +15,7 @@
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/terminal.svg" />
   <source media="(prefers-color-scheme: light)" srcset="assets/terminal-light.svg" />
-  <img src="assets/terminal.svg" width="100%" alt="Terminal running neofetch. Subject: Kyalo Rick Muthoka. Role: full-stack developer, CS at Strathmore. Status: open to software engineering internships, remote, Nairobi or Mombasa. Stack: TypeScript, React, Node and Express, Python, SQL. Plus live contribution, repository, star and follower counts." />
+  <img src="assets/terminal.svg" width="100%" alt="Terminal running neofetch. Subject: Kyalo Rick Muthoka. Role: full-stack developer, CS at Strathmore. Status: open to software engineering internships, remote, Nairobi or Mombasa. Stack: TypeScript, React, Node and Express, Python, SQL. Plus live contribution counts, contribution streaks, and repository, star and follower counts." />
 </picture>
 
 <picture>
@@ -41,12 +41,6 @@
   <source media="(prefers-color-scheme: dark)" srcset="assets/languages.svg" />
   <source media="(prefers-color-scheme: light)" srcset="assets/languages-light.svg" />
   <img src="assets/languages.svg" width="100%" alt="Language mix across Rick's original repositories, each repository weighted equally: mostly JavaScript and TypeScript, then CSS and Python." />
-</picture>
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/heatmap.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="assets/heatmap-light.svg" />
-  <img src="assets/heatmap.svg" width="100%" alt="Contribution calendar for the last year, with the total, longest streak, current streak and best day." />
 </picture>
 
 </div>

@@ -12,7 +12,7 @@ import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { PROFILE, FEATURED, MORE } from './config.mjs';
 import { fetchData } from './data.mjs';
-import { THEMES, LANG_COLORS, hero, terminal, stats, heatmap, languages, projectCard, moreCard, button } from './render.mjs';
+import { THEMES, LANG_COLORS, hero, terminal, stats, languages, projectCard, moreCard, button } from './render.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const ASSETS = join(ROOT, 'assets');
@@ -43,11 +43,8 @@ if (process.argv.includes('--cache')) {
 const original = raw.repos.filter((r) => !r.fork && !r.empty && Object.keys(r.languages).length);
 const stars = raw.repos.filter((r) => !r.fork).reduce((s, r) => s + r.stars, 0);
 
-// Contribution levels by quartile of non-zero days, the same idea GitHub uses.
-const nonzero = raw.days.map((d) => d.count).filter(Boolean).sort((a, b) => a - b);
-const q = (p) => nonzero[Math.min(nonzero.length - 1, Math.floor(p * nonzero.length))] || 1;
-const [q1, q2, q3] = [q(0.25), q(0.5), q(0.75)];
-const days = raw.days.map((d) => ({ ...d, level: d.count === 0 ? 0 : d.count <= q1 ? 1 : d.count <= q2 ? 2 : d.count <= q3 ? 3 : 4 }));
+// Daily contributions drive the total, the weekly sparkline and the streaks.
+const days = raw.days;
 
 let longest = 0;
 let run = 0;
@@ -95,9 +92,10 @@ for (const r of original) {
 let langs = Object.entries(share)
   .map(([name, pct]) => ({ name, pct }))
   .sort((a, b) => b.pct - a.pct);
-if (langs.length > 8) {
-  const rest = langs.slice(7).reduce((s, l) => s + l.pct, 0);
-  langs = [...langs.slice(0, 7), { name: 'Other', pct: rest }];
+// Top five plus "Other": six rows fill the card's two columns evenly and stay legible on a phone.
+if (langs.length > 6) {
+  const rest = langs.slice(5).reduce((s, l) => s + l.pct, 0);
+  langs = [...langs.slice(0, 5), { name: 'Other', pct: rest }];
 }
 langs = langs.map((l) => ({ ...l, color: LANG_COLORS[l.name] || LANG_COLORS.Other }));
 
@@ -118,6 +116,7 @@ const info = {
     b && activityTotal
       ? `${raw.totalContributions.toLocaleString('en-US')} contribs · ${pct(b.commits)} commits · ${pct(b.prs)} PRs · ${pct(b.issues)} issues`
       : `${raw.totalContributions.toLocaleString('en-US')} contributions in the last year`,
+  streaks: `longest ${longest}d · current ${current}d · best day ${best}`,
   repos: `${raw.publicRepos} public · ${stars} stars · ${raw.followers} followers`,
   contact: PROFILE.email && !PROFILE.email.startsWith('{{') ? PROFILE.email : `github.com/${PROFILE.login}`,
 };
@@ -136,15 +135,6 @@ const tiles = [
     series: followerSeries,
   },
 ];
-
-const heat = {
-  days,
-  total: raw.totalContributions,
-  longest,
-  current,
-  best,
-  note: b && b.private ? `includes ${b.private} private contributions` : 'public + private contributions shown on my profile',
-};
 
 const byName = Object.fromEntries(raw.repos.map((r) => [r.name, r]));
 const projects = FEATURED.map((p) => {
@@ -169,7 +159,6 @@ for (const [key, t] of Object.entries(THEMES)) {
   await out('hero', key, hero(t, PROFILE));
   await out('terminal', key, terminal(t, info));
   await out('stats', key, stats(t, tiles));
-  await out('heatmap', key, heatmap(t, heat));
   await out('languages', key, languages(t, langs, original.length));
   for (const p of projects) await out(`project-${p.repo.toLowerCase()}`, key, projectCard(t, p, now));
   await out('project-more', key, moreCard(t, more));

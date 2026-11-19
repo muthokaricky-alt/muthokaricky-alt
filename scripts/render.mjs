@@ -26,7 +26,7 @@ export const THEMES = {
     onAccent: '#06110a',
     star: '#e6edf3',
     glow: 0.16,
-    heat: ['#161b22', '#0e4429', '#006d32', '#26a641', '#39d353'],
+    greens: ['#0e4429', '#006d32', '#26a641'],
   },
   light: {
     name: 'light',
@@ -45,7 +45,7 @@ export const THEMES = {
     onAccent: '#ffffff',
     star: '#1f2328',
     glow: 0.08,
-    heat: ['#ebedf0', '#9be9a8', '#40c463', '#30a14e', '#216e39'],
+    greens: ['#9be9a8', '#40c463', '#30a14e'],
   },
 };
 
@@ -322,7 +322,7 @@ function monogram(t, x0, y0, cw, ch) {
 
 export function terminal(t, info) {
   const W = 840;
-  const H = 372;
+  const H = 393;
   const f = frame(t, W, H, 14);
   const cmd = 'neofetch --live';
 
@@ -340,6 +340,7 @@ export function terminal(t, info) {
     ['Stack', info.stack],
     ['Uptime', info.uptime],
     ['Activity', info.activity],
+    ['Streaks', info.streaks],
     ['Repos', info.repos],
     ['Contact', info.contact],
   ];
@@ -354,8 +355,8 @@ export function terminal(t, info) {
     )
     .join('\n');
 
-  const palette = [t.heat[1], t.heat[2], t.heat[3], t.accent, t.blue, t.violet, '#f78166', '#e3b341']
-    .map((c, i) => `<rect x="${X + i * 26}" y="${338}" width="22" height="12" rx="3" fill="${c}"/>`)
+  const palette = [...t.greens, t.accent, t.blue, t.violet, '#f78166', '#e3b341']
+    .map((c, i) => `<rect x="${X + i * 26}" y="${359}" width="22" height="12" rx="3" fill="${c}"/>`)
     .join('');
 
   const css = `
@@ -367,7 +368,7 @@ export function terminal(t, info) {
   const defs = `${f.defs}
 <linearGradient id="mono" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="${t.accent}"/><stop offset="1" stop-color="${t.accent2}"/></linearGradient>`;
 
-  const art = monogram(t, 30, 160, 11, 20);
+  const art = monogram(t, 30, 170, 11, 20);
   const body = `${f.body}
 <rect x="1" y="1" width="${W - 2}" height="34" rx="13" fill="${t.chip}" fill-opacity=".7"/>
 <rect x="1" y="34" width="${W - 2}" height="1" fill="${t.border}"/>
@@ -421,76 +422,12 @@ ${sparkline(t, tile.series, 16, 100, tw - 32, 38, c, `sp${i}`, 0.4 + i * 0.12)}
   return svg(W, H, title, body, DRAW_CSS, defs);
 }
 
-// ---------- heatmap ----------
-
-export function heatmap(t, h) {
-  const W = 840;
-  const H = 214;
-  const f = frame(t, W, H, 16);
-  const x0 = 52;
-  const step = r1((W - 24 - x0) / Math.ceil((h.days.length + new Date(h.days[0].date + 'T00:00:00Z').getUTCDay()) / 7));
-  const cell = r1(step - 3);
-  const y0 = 72;
-
-  // Columns are weeks starting on Sunday, like GitHub's own graph.
-  const first = new Date(h.days[0].date + 'T00:00:00Z');
-  const lead = first.getUTCDay();
-  let cells = '';
-  let months = '';
-  let lastMonth = -1;
-  const cols = Math.ceil((h.days.length + lead) / 7);
-  for (let c = 0; c < cols; c++) {
-    let col = '';
-    for (let r = 0; r < 7; r++) {
-      const idx = c * 7 + r - lead;
-      if (idx < 0 || idx >= h.days.length) continue;
-      const d = h.days[idx];
-      col += `<rect x="${x0 + c * step}" y="${y0 + r * step}" width="${cell}" height="${cell}" rx="2.5" fill="${t.heat[d.level]}"><title>${d.count} on ${d.date}</title></rect>`;
-      const m = new Date(d.date + 'T00:00:00Z').getUTCMonth();
-      if (r === 0 || idx === 0) {
-        if (m !== lastMonth && c < cols - 1) {
-          if (lastMonth !== -1 || new Date(d.date + 'T00:00:00Z').getUTCDate() <= 7)
-            months += `<text class="m" x="${x0 + c * step}" y="${y0 - 10}" font-size="10" fill="${t.faint}">${new Date(d.date + 'T00:00:00Z').toLocaleString('en-US', { month: 'short', timeZone: 'UTC' })}</text>`;
-          lastMonth = m;
-        }
-      }
-    }
-    cells += `<g class="col" style="animation-delay:${r1(0.2 + c * 0.018)}s">${col}</g>`;
-  }
-  const dayLabels = [
-    [1, 'Mon'],
-    [3, 'Wed'],
-    [5, 'Fri'],
-  ]
-    .map(([r, l]) => `<text class="m" x="20" y="${y0 + r * step + 9}" font-size="10" fill="${t.faint}">${l}</text>`)
-    .join('');
-
-  const legendX = W - 24 - (5 * step + 64);
-  const legend =
-    `<text class="m" x="${legendX}" y="${y0 + 7 * step + 22}" font-size="10" fill="${t.faint}">less</text>` +
-    t.heat.map((c, i) => `<rect x="${legendX + 32 + i * step}" y="${y0 + 7 * step + 13}" width="${cell}" height="${cell}" rx="2.5" fill="${c}"/>`).join('') +
-    `<text class="m" x="${legendX + 32 + 5 * step + 4}" y="${y0 + 7 * step + 22}" font-size="10" fill="${t.faint}">more</text>`;
-
-  const facts = `longest streak ${h.longest}d · current ${h.current}d · best day ${h.best}`;
-  const css = `.col{animation:fade .5s ease-out both}@keyframes fade{from{opacity:0}}`;
-  const body = `${f.body}
-<g class="fi">
-  <text class="s" x="24" y="36" font-size="17" font-weight="700" fill="${t.text}">${fmt(h.total)} contributions <tspan fill="${t.sub}" font-weight="400">in the last year</tspan></text>
-  <text class="m" x="${W - 24}" y="36" font-size="11" text-anchor="end" fill="${t.sub}">${esc(facts)}</text>
-</g>
-${months}${dayLabels}
-${cells}
-${legend}
-<text class="m" x="24" y="${y0 + 7 * step + 22}" font-size="10" fill="${t.faint}">${esc(h.note)}</text>`;
-  return svg(W, H, `${fmt(h.total)} contributions in the last year. ${facts}.`, body, css, f.defs);
-}
-
 // ---------- languages ----------
 
 export function languages(t, langs, repoCount) {
   const W = 840;
   const rowsPerCol = Math.ceil(langs.length / 2);
-  const H = 100 + rowsPerCol * 32 + 6;
+  const H = 116 + rowsPerCol * 40;
   const f = frame(t, W, H, 16);
   const bx = 24;
   const bw = W - 48;
@@ -499,7 +436,7 @@ export function languages(t, langs, repoCount) {
   const segs = langs
     .map((l, i) => {
       const w = Math.max(l.pct * bw, 2);
-      const s = `<rect class="grow" style="animation-delay:${r1(0.2 + i * 0.08)}s" x="${r1(bx + acc)}" y="58" width="${r1(w)}" height="10" fill="${l.color}"/>`;
+      const s = `<rect class="grow" style="animation-delay:${r1(0.2 + i * 0.08)}s" x="${r1(bx + acc)}" y="62" width="${r1(w)}" height="14" fill="${l.color}"/>`;
       acc += l.pct * bw;
       return s;
     })
@@ -511,29 +448,29 @@ export function languages(t, langs, repoCount) {
       const col = Math.floor(i / rowsPerCol);
       const row = i % rowsPerCol;
       const x = 24 + col * (colW + 32);
-      const y = 104 + row * 32;
+      const y = 126 + row * 40;
       const pct = `${(l.pct * 100).toFixed(1)}%`;
-      const barX = x + 120;
-      const barW = colW - 120 - 56;
+      const barX = x + 150;
+      const barW = colW - 150 - 72;
       return `<g class="fi" style="animation-delay:${r1(0.5 + i * 0.07)}s">
-  <circle cx="${x + 5}" cy="${y - 4}" r="5" fill="${l.color}"/>
-  <text class="s" x="${x + 18}" y="${y}" font-size="14" fill="${t.text}">${esc(l.name)}</text>
-  <rect x="${barX}" y="${y - 8}" width="${r1(barW)}" height="6" rx="3" fill="${t.chip}" stroke="${t.chipBorder}" stroke-width=".5"/>
-  <rect class="grow" style="animation-delay:${r1(0.7 + i * 0.07)}s" x="${barX}" y="${y - 8}" width="${r1(Math.max(barW * (l.pct / langs[0].pct), 3))}" height="6" rx="3" fill="${l.color}"/>
-  <text class="m" x="${x + colW}" y="${y}" font-size="12" text-anchor="end" fill="${t.sub}">${pct}</text>
+  <circle cx="${x + 6}" cy="${y - 6}" r="6" fill="${l.color}"/>
+  <text class="s" x="${x + 22}" y="${y}" font-size="17" fill="${t.text}">${esc(l.name)}</text>
+  <rect x="${barX}" y="${y - 10}" width="${r1(barW)}" height="8" rx="4" fill="${t.chip}" stroke="${t.chipBorder}" stroke-width=".5"/>
+  <rect class="grow" style="animation-delay:${r1(0.7 + i * 0.07)}s" x="${barX}" y="${y - 10}" width="${r1(Math.max(barW * (l.pct / langs[0].pct), 4))}" height="8" rx="4" fill="${l.color}"/>
+  <text class="m" x="${x + colW}" y="${y}" font-size="15" text-anchor="end" fill="${t.sub}">${pct}</text>
 </g>`;
     })
     .join('\n');
 
   const css = `.grow{transform-box:fill-box;transform-origin:left;animation:grow .9s cubic-bezier(.2,.8,.2,1) both}
 @keyframes grow{from{transform:scaleX(0)}}`;
-  const defs = `${f.defs}<clipPath id="bar"><rect x="${bx}" y="58" width="${bw}" height="10" rx="5"/></clipPath>`;
+  const defs = `${f.defs}<clipPath id="bar"><rect x="${bx}" y="62" width="${bw}" height="14" rx="7"/></clipPath>`;
   const body = `${f.body}
 <g class="fi">
-  <text class="s" x="24" y="38" font-size="17" font-weight="700" fill="${t.text}">Languages</text>
-  <text class="m" x="${W - 24}" y="38" font-size="11" text-anchor="end" fill="${t.sub}">each of my ${repoCount} original repos weighted equally</text>
+  <text class="s" x="24" y="40" font-size="20" font-weight="700" fill="${t.text}">Languages</text>
+  <text class="m" x="${W - 24}" y="40" font-size="12.5" text-anchor="end" fill="${t.sub}">each of my ${repoCount} original repos weighted equally</text>
 </g>
-<g clip-path="url(#bar)"><rect x="${bx}" y="58" width="${bw}" height="10" fill="${t.chip}"/>${segs}</g>
+<g clip-path="url(#bar)"><rect x="${bx}" y="62" width="${bw}" height="14" fill="${t.chip}"/>${segs}</g>
 ${rows}`;
   const title = `Languages across ${repoCount} original repos, each repo weighted equally: ${langs.map((l) => `${l.name} ${(l.pct * 100).toFixed(1)}%`).join(', ')}.`;
   return svg(W, H, title, body, css, defs);

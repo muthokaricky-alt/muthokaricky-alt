@@ -22,7 +22,6 @@ query($login: String!) {
       totalPullRequestContributions
       totalPullRequestReviewContributions
       totalIssueContributions
-      restrictedContributionsCount
       contributionCalendar {
         totalContributions
         weeks { contributionDays { date contributionCount } }
@@ -61,7 +60,6 @@ async function viaGraphQL(login, token) {
       commits: cc.totalCommitContributions,
       prs: cc.totalPullRequestContributions + cc.totalPullRequestReviewContributions,
       issues: cc.totalIssueContributions,
-      private: cc.restrictedContributionsCount,
     },
     repos: u.repositories.nodes.map((r) => ({
       name: r.name,
