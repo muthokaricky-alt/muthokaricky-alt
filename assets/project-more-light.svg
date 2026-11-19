@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="230" viewBox="0 0 420 230" role="img" aria-labelledby="t">
+<title id="t">34 public repositories. Also worth a look: QR Studio, Schedulix, NexusLS, Budget Tracker, MyBlock, TicTacToe.</title>
+<defs>
+<linearGradient id="edge" x1="0" y1="0" x2="1" y2="1">
+  <stop offset="0" stop-color="#1a7f37" stop-opacity="0.6"/>
+  <stop offset=".45" stop-color="#7c3aed" stop-opacity="0.35"/>
+  <stop offset="1" stop-color="#d0d7de"/>
+</linearGradient>
+<radialGradient id="glowA" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(0 0) scale(231.00000000000003 207)">
+  <stop offset="0" stop-color="#1a7f37" stop-opacity="0.08"/><stop offset="1" stop-color="#1a7f37" stop-opacity="0"/>
+</radialGradient>
+<radialGradient id="glowB" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(420 230) scale(210 207)">
+  <stop offset="0" stop-color="#7c3aed" stop-opacity="0.08"/><stop offset="1" stop-color="#7c3aed" stop-opacity="0"/>
+</radialGradient><linearGradient id="tile" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1a7f37"/><stop offset="1" stop-color="#7c3aed"/></linearGradient></defs>
+<style>
+.m{font-family:ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace}.s{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans',Helvetica,Arial,sans-serif}
+.fi{animation:fi .7s cubic-bezier(.2,.8,.2,1) both}
+@keyframes fi{from{opacity:0;transform:translateY(6px)}}
+.pulse{opacity:0;transform-box:fill-box;transform-origin:center;animation:pulse 2.6s cubic-bezier(.2,.8,.2,1) infinite}
+@keyframes pulse{0%{opacity:.7;transform:scale(1)}70%,100%{opacity:0;transform:scale(2.8)}}
+
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+<rect x=".5" y=".5" width="419" height="229" rx="16" fill="#ffffff"/>
+<rect x=".5" y=".5" width="419" height="229" rx="16" fill="url(#glowA)"/>
+<rect x=".5" y=".5" width="419" height="229" rx="16" fill="url(#glowB)"/>
+<rect x=".5" y=".5" width="419" height="229" rx="16" fill="none" stroke="url(#edge)"/>
+<g class="fi">
+  <g transform="translate(20 20)">
+<rect width="40" height="40" rx="11" fill="url(#tile)"/>
+<g fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" color="#ffffff"><rect x="11" y="11" width="7" height="7" rx="2"/><rect x="22" y="11" width="7" height="7" rx="2"/><rect x="11" y="22" width="7" height="7" rx="2"/><rect x="22" y="22" width="7" height="7" rx="2"/></g>
+</g>
+  <text class="s" x="72" y="37" font-size="20" font-weight="700" fill="#1f2328">34 public repos</text>
+  <text class="m" x="72" y="56" font-size="11" fill="#6b7280">12 original projects, plus forks</text>
+</g>
+<g class="fi" style="animation-delay:.15s">
+  <text class="m" x="20" y="92" font-size="11" fill="#6b7280">ALSO WORTH A LOOK</text>
+  <text class="s" x="20" y="118" font-size="15" fill="#1f2328" fill-opacity=".88">QR Studio · Schedulix · NexusLS</text><text class="s" x="20" y="139" font-size="15" fill="#1f2328" fill-opacity=".88">Budget Tracker · MyBlock · TicTacToe</text>
+</g>
+<g class="fi" style="animation-delay:.3s">
+  <rect x="20" y="186" width="148" height="24" rx="12" fill="#1a7f37" fill-opacity=".12" stroke="#1a7f37" stroke-opacity=".5"/>
+  <text class="m" x="32" y="202" font-size="11" font-weight="700" fill="#1a7f37">Browse all repos →</text>
+</g>
+</svg>

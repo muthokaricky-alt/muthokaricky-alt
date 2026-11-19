@@ -1,0 +1,9 @@
+{
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "generate": "node scripts/generate.mjs",
+    "generate:cache": "node scripts/generate.mjs --cache"
+  },
+  "engines": { "node": ">=20" }
+}
