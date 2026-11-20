@@ -31,7 +31,7 @@
 <g fill="none" stroke="#06110a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" color="#06110a"><rect x="11" y="11" width="7" height="7" rx="2"/><rect x="22" y="11" width="7" height="7" rx="2"/><rect x="11" y="22" width="7" height="7" rx="2"/><rect x="22" y="22" width="7" height="7" rx="2"/></g>
 </g>
   <text class="s" x="72" y="37" font-size="20" font-weight="700" fill="#e6edf3">34 public repos</text>
-  <text class="m" x="72" y="56" font-size="11" fill="#6e7681">12 original projects, plus forks</text>
+  <text class="m" x="72" y="56" font-size="11" fill="#6e7681">13 original projects, plus forks</text>
 </g>
 <g class="fi" style="animation-delay:.15s">
   <text class="m" x="20" y="92" font-size="11" fill="#6e7681">ALSO WORTH A LOOK</text>
