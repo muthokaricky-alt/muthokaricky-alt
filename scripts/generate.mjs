@@ -30,9 +30,11 @@ if (process.argv.includes('--cache')) {
   raw = JSON.parse(await readFile(CACHE, 'utf8'));
   console.log(`Using cached data from ${raw.fetchedAt} (${raw.source})`);
 } else {
-  const token = process.env.GH_TOKEN || process.env.GITHUB_TOKEN || '';
-  console.log(token ? 'Fetching via GraphQL (token found)' : 'Fetching via public REST (no token)');
-  raw = await fetchData(PROFILE.login, token);
+  // PROFILE_TOKEN (personal access token) wins; otherwise the built-in GITHUB_TOKEN. Star history needs PROFILE_TOKEN.
+  const profileToken = process.env.PROFILE_TOKEN || '';
+  const token = profileToken || process.env.GH_TOKEN || process.env.GITHUB_TOKEN || '';
+  console.log(token ? `Fetching via GraphQL (${profileToken ? 'PROFILE_TOKEN' : 'built-in token'})` : 'Fetching via public REST (no token)');
+  raw = await fetchData(PROFILE.login, token, profileToken);
   raw.fetchedAt = now.toISOString();
   await mkdir(dirname(CACHE), { recursive: true });
   await writeFile(CACHE, JSON.stringify(raw, null, 2));
@@ -69,7 +71,7 @@ samples.push(now);
 const cumulative = (dates) => samples.map((s) => dates.filter((d) => new Date(d) <= s).length);
 
 const repoSeries = cumulative(raw.repos.map((r) => r.createdAt));
-// Star timestamps come from GraphQL; without a token they're unknown, so fall back to the tracked history.
+// Star timestamps are optional (PROFILE_TOKEN only); without them they're unknown, so fall back to the tracked history.
 const starTimes = raw.repos.every((r) => Array.isArray(r.starredAt)) ? raw.repos.filter((r) => !r.fork).flatMap((r) => r.starredAt) : null;
 
 // Followers have no history in the API, so the workflow keeps its own. A row is added only when a number changes.

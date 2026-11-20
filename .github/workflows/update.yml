@@ -20,17 +20,18 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v5
         with:
           node-version: 22
 
       - name: Generate cards
         env:
-          # PROFILE_TOKEN is optional: a personal access token lets private contributions show up.
-          # Without it the built-in GITHUB_TOKEN reads public data, which is enough for everything else.
-          GH_TOKEN: ${{ secrets.PROFILE_TOKEN || secrets.GITHUB_TOKEN }}
+          # PROFILE_TOKEN is optional: a personal access token adds star history and private contributions.
+          # Without it the built-in GITHUB_TOKEN reads public data, and the star card uses a flat sparkline.
+          PROFILE_TOKEN: ${{ secrets.PROFILE_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: node scripts/generate.mjs
 
       - name: Commit if anything changed

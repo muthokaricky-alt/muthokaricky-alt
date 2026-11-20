@@ -8,7 +8,11 @@ async function getJSON(url, token, extraHeaders = {}) {
   const res = await fetch(url, {
     headers: { ...UA, Accept: 'application/vnd.github+json', ...(token ? { Authorization: `Bearer ${token}` } : {}), ...extraHeaders },
   });
-  if (!res.ok) throw new Error(`${res.status} ${res.statusText} for ${url}`);
+  if (!res.ok) {
+    const err = new Error(`${res.status} ${res.statusText} for ${url}`);
+    err.status = res.status;
+    throw err;
+  }
   return res.json();
 }
 
@@ -33,7 +37,6 @@ query($login: String!) {
         name description isFork isArchived stargazerCount pushedAt createdAt homepageUrl diskUsage
         primaryLanguage { name color }
         languages(first: 20, orderBy: {field: SIZE, direction: DESC}) { edges { size node { name color } } }
-        stargazers(first: 100) { edges { starredAt } }
       }
     }
   }
@@ -72,7 +75,7 @@ async function viaGraphQL(login, token) {
       homepage: r.homepageUrl,
       empty: r.diskUsage === 0,
       languages: Object.fromEntries(r.languages.edges.map((e) => [e.node.name, e.size])),
-      starredAt: r.stargazers.edges.map((e) => e.starredAt),
+      starredAt: null, // filled in by addStarDates() when a PROFILE_TOKEN is available
     })),
   };
 }
@@ -101,12 +104,6 @@ async function viaREST(login, token) {
   for (const r of list) {
     const own = !r.fork && r.size > 0;
     const languages = own ? await getJSON(`${API}/repos/${login}/${r.name}/languages`, token) : {};
-    // Star timestamps need a token on REST; without one they're unknown (null) and the history file is used instead.
-    const starredAt = !token
-      ? null
-      : !own || r.stargazers_count === 0
-        ? []
-        : (await getJSON(`${API}/repos/${login}/${r.name}/stargazers?per_page=100`, token, { Accept: 'application/vnd.github.star+json' })).map((s) => s.starred_at);
     repos.push({
       name: r.name,
       description: r.description,
@@ -118,7 +115,7 @@ async function viaREST(login, token) {
       homepage: r.homepage,
       empty: r.size === 0,
       languages,
-      starredAt,
+      starredAt: null, // filled in by addStarDates() when a PROFILE_TOKEN is available
     });
   }
   const days = await scrapeContributions(login);
@@ -134,13 +131,50 @@ async function viaREST(login, token) {
   };
 }
 
-export async function fetchData(login, token) {
-  if (!token) return viaREST(login, '');
+// Star history is optional. It needs a personal access token (the built-in GITHUB_TOKEN gets 403), so it only runs
+// when a PROFILE_TOKEN is given. Any 403/404 skips star dates for good and the card falls back to a flat sparkline.
+async function addStarDates(login, repos, token) {
+  const targets = repos.filter((r) => !r.fork && !r.empty);
+  const star = { Accept: 'application/vnd.github.star+json' };
   try {
-    return await viaGraphQL(login, token);
+    for (const r of targets) {
+      if (r.stars === 0) {
+        r.starredAt = [];
+        continue;
+      }
+      const list = await getJSON(`${API}/repos/${login}/${r.name}/stargazers?per_page=100`, token, star);
+      r.starredAt = list.map((s) => s.starred_at);
+    }
+    for (const r of repos) if (r.fork || r.empty) r.starredAt = [];
   } catch (err) {
-    // e.g. a token without access to some field: still produce cards from REST rather than fail the run
-    console.warn(`GraphQL failed, falling back to REST: ${err.message}`);
-    return viaREST(login, token);
+    if (err.status !== 403 && err.status !== 404) throw err;
+    console.warn(`Star history unavailable (${err.message}); using the flat star sparkline.`);
+    for (const r of repos) r.starredAt = null;
   }
+}
+
+// token: used for all core data (PROFILE_TOKEN if set, else GITHUB_TOKEN).
+// profileToken: only set when PROFILE_TOKEN exists; enables the optional star history.
+export async function fetchData(login, token, profileToken = '') {
+  let data;
+  if (!token) {
+    data = await viaREST(login, '');
+  } else {
+    try {
+      data = await viaGraphQL(login, token);
+    } catch (err) {
+      // e.g. a token without access to some field: still produce cards from REST rather than fail the run
+      console.warn(`GraphQL failed, falling back to REST: ${err.message}`);
+      data = await viaREST(login, token); // core data: if this fails too, the run fails
+    }
+  }
+  if (profileToken) {
+    try {
+      await addStarDates(login, data.repos, profileToken);
+    } catch (err) {
+      console.warn(`Star history skipped: ${err.message}`);
+      for (const r of data.repos) r.starredAt = null;
+    }
+  }
+  return data;
 }
