@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="420" height="230" viewBox="0 0 420 230" role="img" aria-labelledby="t">
-<title id="t">Touchline: Cross-platform football manager: match engine, transfers, competitions, career mode. 10 / 10 roadmap milestones built. Built with Expo, React Native, TypeScript, Zustand, SQLite, Zod. Live demo available. updated 3d ago.</title>
+<title id="t">Touchline: Cross-platform football manager: match engine, transfers, competitions, career mode. 10 / 10 roadmap milestones built. Built with Expo, React Native, TypeScript, Zustand, SQLite, Zod. Live demo available. updated 4d ago.</title>
 <defs>
 <linearGradient id="edge" x1="0" y1="0" x2="1" y2="1">
   <stop offset="0" stop-color="#1a7f37" stop-opacity="0.6"/>
@@ -49,5 +49,5 @@
 <text class="m" x="184" y="202" font-size="11" fill="#4b5563">TypeScript</text><rect x="265" y="186" width="65" height="24" rx="12" fill="#f6f8fa" stroke="#d0d7de"/>
 <text class="m" x="274" y="202" font-size="11" fill="#4b5563">Zustand</text><rect x="336" y="186" width="58" height="24" rx="12" fill="#f6f8fa" stroke="#d0d7de"/>
 <text class="m" x="345" y="202" font-size="11" fill="#4b5563">SQLite</text></g>
-<text class="m" x="400" y="60" font-size="11" text-anchor="end" fill="#6b7280">updated 3d ago</text>
+<text class="m" x="400" y="60" font-size="11" text-anchor="end" fill="#6b7280">updated 4d ago</text>
 </svg>
