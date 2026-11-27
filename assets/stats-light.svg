@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="840" height="156" viewBox="0 0 840 156" role="img" aria-labelledby="t">
-<title id="t">Contributions: 652 (last 12 months, weekly). Public repos: 34 (13 original, rest forks). Stars: 60 (on my original repos). Followers: 164 (-1 since 19 Nov 2026)</title>
+<title id="t">Contributions: 652 (last 12 months, weekly). Public repos: 34 (13 original, rest forks). Stars: 60 (on my original repos). Followers: 165 (+0 since 19 Nov 2026)</title>
 <defs></defs>
 <style>
 .m{font-family:ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace}.s{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans',Helvetica,Arial,sans-serif}
@@ -94,8 +94,8 @@
   <text class="m" x="16" y="86" font-size="11" fill="#4b5563">on my original repos</text>
 </g>
 <linearGradient id="sp2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e3b341" stop-opacity=".28"/><stop offset="1" stop-color="#e3b341" stop-opacity="0"/></linearGradient>
-<path class="area" style="animation-delay:1.1400000000000001s" d="M16 138 Q58.3 138 79.4 138 Q100.5 138 121.6 138 Q142.8 138 163.9 138 L185 138 L185 138 L16 138 Z" fill="url(#sp2)"/>
-<path class="draw" style="animation-delay:0.64s" d="M16 138 Q58.3 138 79.4 138 Q100.5 138 121.6 138 Q142.8 138 163.9 138 L185 138" pathLength="1" fill="none" stroke="#e3b341" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path class="area" style="animation-delay:1.1400000000000001s" d="M16 138 Q49.8 138 66.7 138 Q83.6 138 100.5 138 Q117.4 138 134.3 138 Q151.2 138 168.1 138 L185 138 L185 138 L16 138 Z" fill="url(#sp2)"/>
+<path class="draw" style="animation-delay:0.64s" d="M16 138 Q49.8 138 66.7 138 Q83.6 138 100.5 138 Q117.4 138 134.3 138 Q151.2 138 168.1 138 L185 138" pathLength="1" fill="none" stroke="#e3b341" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 <circle class="pulse" style="animation-delay:1.8399999999999999s" cx="185" cy="138" r="3.5" fill="#e3b341"/>
 <circle cx="185" cy="138" r="3.5" fill="#e3b341"/>
 </svg><svg x="639" y="0" width="201" height="156" viewBox="0 0 201 156" overflow="visible">
@@ -118,13 +118,13 @@
 <g class="fi" style="animation-delay:0.4s">
   <circle cx="20" cy="24" r="4" fill="#7c3aed"/>
   <text class="m" x="32" y="28" font-size="11" letter-spacing=".8" fill="#6b7280">FOLLOWERS</text>
-  <text class="s" x="16" y="66" font-size="32" font-weight="800" letter-spacing="-.5" fill="#1f2328">164</text>
-  <text class="m" x="16" y="86" font-size="11" fill="#4b5563">-1 since 19 Nov 2026</text>
+  <text class="s" x="16" y="66" font-size="32" font-weight="800" letter-spacing="-.5" fill="#1f2328">165</text>
+  <text class="m" x="16" y="86" font-size="11" fill="#4b5563">+0 since 19 Nov 2026</text>
 </g>
 <linearGradient id="sp3" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7c3aed" stop-opacity=".28"/><stop offset="1" stop-color="#7c3aed" stop-opacity="0"/></linearGradient>
-<path class="area" style="animation-delay:1.26s" d="M16 100 Q58.3 109.5 79.4 123.8 Q100.5 138 121.6 133.3 Q142.8 128.5 163.9 119 L185 109.5 L185 138 L16 138 Z" fill="url(#sp3)"/>
-<path class="draw" style="animation-delay:0.76s" d="M16 100 Q58.3 109.5 79.4 123.8 Q100.5 138 121.6 133.3 Q142.8 128.5 163.9 119 L185 109.5" pathLength="1" fill="none" stroke="#7c3aed" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-<circle class="pulse" style="animation-delay:1.96s" cx="185" cy="109.5" r="3.5" fill="#7c3aed"/>
-<circle cx="185" cy="109.5" r="3.5" fill="#7c3aed"/>
+<path class="area" style="animation-delay:1.26s" d="M16 100 Q49.8 109.5 66.7 123.8 Q83.6 138 100.5 133.3 Q117.4 128.5 134.3 119 Q151.2 109.5 168.1 104.8 L185 100 L185 138 L16 138 Z" fill="url(#sp3)"/>
+<path class="draw" style="animation-delay:0.76s" d="M16 100 Q49.8 109.5 66.7 123.8 Q83.6 138 100.5 133.3 Q117.4 128.5 134.3 119 Q151.2 109.5 168.1 104.8 L185 100" pathLength="1" fill="none" stroke="#7c3aed" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<circle class="pulse" style="animation-delay:1.96s" cx="185" cy="100" r="3.5" fill="#7c3aed"/>
+<circle cx="185" cy="100" r="3.5" fill="#7c3aed"/>
 </svg>
 </svg>
